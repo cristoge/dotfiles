@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+*.pyc
+.DS_Store
+.DS_Store

@@ -1,0 +1,43 @@
+font-family = Maple Mono
+font-size = 17
+
+#si usamos dank mono la fuente cambia
+#font-family = DankMono Nerd Font Mono
+#font-size = 19
+font-style = Medium 
+
+#el feature es para usar maple mono y que la a no quede rara
+font-feature=cv35,cv03,cv05,cv10,cv61
+
+#Distintos temas que me gustan
+theme = vague
+#theme = Aura
+#theme = rose pine moon
+cursor-style = block
+#la transparencia y la opacidad
+background-opacity = 0.95
+background-blur-radius = 20
+
+#fondo de color negro en trasparencia
+#background = #141415
+
+#window
+window-padding-balance = true
+macos-titlebar-style = hidden
+confirm-close-surface = always
+shell-integration-features = no-cursor,sudo,no-title
+window-save-state = always
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+
+#shaders
+custom-shader-animation = always
+custom-shader = ./shaders/cursor_personal.glsl
+
+
+
+# other
+copy-on-select = clipboard
+keybind = super+r=reload_config
+keybind = super+i=inspector:toggle
