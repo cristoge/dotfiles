@@ -1,43 +1,70 @@
-font-family = Maple Mono
-font-size = 17
-
-#si usamos dank mono la fuente cambia
-#font-family = DankMono Nerd Font Mono
-#font-size = 19
-font-style = Medium 
-
-#el feature es para usar maple mono y que la a no quede rara
-font-feature=cv35,cv03,cv05,cv10,cv61
-
-#Distintos temas que me gustan
-theme = vague
-#theme = Aura
-#theme = rose pine moon
-cursor-style = block
-#la transparencia y la opacidad
+# Window Configuration
+window-decoration = false
+window-padding-x = 12
+window-padding-y = 12
 background-opacity = 0.95
 background-blur-radius = 20
 
-#fondo de color negro en trasparencia
-#background = #141415
-
-#window
-window-padding-balance = true
-macos-titlebar-style = hidden
-confirm-close-surface = always
-shell-integration-features = no-cursor,sudo,no-title
-window-save-state = always
+# Scrollback
+scrollback-limit = 3023
+# Terminal Features
 mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
+copy-on-select = false
+confirm-close-surface = always
+# Desactiva notificaciones molestas de clipboard o reload
+app-notifications = no-clipboard-copy,no-config-reload
+# Key Bindings
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+t=new_tab
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+# Shift+Enter para nueva línea (sin ejecutar)
+keybind = shift+enter=text:\n
 
+# UI & Theme
+# Tema personalizado
+theme = dankcolors
+# Opacidad de splits no activos
+unfocused-split-opacity = 0.7
+# Color de splits no activos
+unfocused-split-fill = #44464f
 
-#shaders
+# Desactiva barra de título GTK
+gtk-titlebar = false
+# Solo una instancia de la app
+gtk-single-instance = true
+# Shell Integration
+# Detecta integración con el shell
+shell-integration = detect
+# Características específicas del shell
+shell-integration-features = no-cursor,sudo,no-title
+
+# Fonts
+# Fuente principal
+font-family = Maple Mono NF
+# Alternativa si usamos Dank Mono:
+# Tamaño de fuente
+font-size = 14
+# Tamaño alternativo para Dank Mono
+# font-size = 19
+
+# Estilo de fuente
+font-style = Medium
+
+# Características OpenType para la 'a' y ligaduras
+font-feature = cv35,cv03,cv05,cv10,cv61
+
+# Cursor
+# Estilo de cursor
+cursor-style = block
+# Shaders
 custom-shader-animation = always
 custom-shader = ./shaders/cursor_personal.glsl
+# background = #141415
+# Guardar estado de ventana al cerrar
+# window-save-state = always
 
-
-
-# other
-copy-on-select = clipboard
-keybind = super+r=reload_config
-keybind = super+i=inspector:toggle
+# Copiar y pegar al portapapeles
+# keybind = ctrl+c=copy_to_clipboard
+# keybind = ctrl+v=paste_from_clipboard

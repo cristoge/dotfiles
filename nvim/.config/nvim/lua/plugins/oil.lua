@@ -134,7 +134,7 @@ return {
   },
 
   dependencies = {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
   },
 
   config = function(_, opts)
