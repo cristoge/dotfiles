@@ -2,8 +2,8 @@
 window-decoration = false
 window-padding-x = 12
 window-padding-y = 12
-background-opacity = 0.95
-background-blur-radius = 20
+background-opacity = 0.92
+background-blur-radius = 99
 
 # Scrollback
 scrollback-limit = 3023
@@ -24,7 +24,7 @@ keybind = shift+enter=text:\n
 
 # UI & Theme
 # Tema personalizado
-theme = dankcolors
+theme = vague
 # Opacidad de splits no activos
 unfocused-split-opacity = 0.7
 # Color de splits no activos
@@ -42,7 +42,7 @@ shell-integration-features = no-cursor,sudo,no-title
 
 # Fonts
 # Fuente principal
-font-family = Maple Mono NF
+font-family = Maple Mono
 # Alternativa si usamos Dank Mono:
 # Tamaño de fuente
 font-size = 14

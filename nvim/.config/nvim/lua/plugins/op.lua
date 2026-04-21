@@ -104,14 +104,11 @@ return {
   },
   config = function()
     vim.g.opencode_opts = {
-      provider = {
-        snacks = {
-          win = {
-            position = "left",
-          },
-        },
+      ui = {
+        position = "left",
       },
     }
+
     vim.o.autoread = true
   end,
 }
