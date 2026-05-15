@@ -1,0 +1,143 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "ctrl-h": "editor::Backspace",
+    },
+  },
+  {
+    "context": "vim_mode == literal",
+    "unbind": {
+      "ctrl-h": ["vim::Literal", ["ctrl-h", "\b"]],
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-h": "editor::Backspace",
+    },
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+    },
+  },
+
+  {
+    "unbind": {
+      "cmd-shift-c": "collab_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+    },
+  },
+  // Y este bloque para cerrarlo cuando el foco está EN el panel
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleRightDock",
+      "escape": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Ficheros
+      "space space": "file_finder::Toggle", // buscar fichero
+      "space f n": "workspace::NewFile", // nuevo fichero
+
+      // Búsqueda (como Telescope en LazyVim)
+      "space /": "pane::DeploySearch", // grep en proyecto
+      "space s g": "pane::DeploySearch", // grep (alias)
+      "space s w": "pane::DeploySearch", // buscar palabra bajo cursor
+
+      // Buffers / Tabs
+      "space b d": "pane::CloseActiveItem", // cerrar buffer
+
+      // Ventanas / Splits
+      "space w v": "pane::SplitVertical", // split vertical
+      "space w s": "pane::SplitHorizontal", // split horizontal
+      "space w c": "pane::CloseActiveItem", // cerrar ventana
+      "space w w": "workspace::ActivateNextPane", // saltar a siguiente panel
+
+      // Navegación entre splits (Ctrl+hjkl)
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+
+      // LSP (como <space>c en LazyVim)
+      "space c a": "editor::ToggleCodeActions", // code actions
+      "space c r": "editor::Rename", // renombrar símbolo
+      "space c f": "editor::Format", // formatear fichero
+      "space c d": "editor::GoToDefinition", // ir a definición
+      "space c D": "editor::GoToTypeDefinition", // ir a tipo
+      "space c i": "editor::GoToImplementation", // ir a implementación
+      "space c R": "editor::FindAllReferences", // todas las referencias
+      "space c s": "outline::Toggle", // símbolos del fichero
+
+      // Explorer
+      "space e": "project_panel::ToggleFocus", // toggle file explorer
+
+      // Miscelánea
+      "space q": "workspace::CloseWindow", // cerrar ventana
+      "space ;": "zed::OpenSettings", // abrir settings
+    },
+  },
+
+  // ── VISUAL MODE ─────────────────────────────────────────────────────────────
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space c a": "editor::ToggleCodeActions",
+      "space c f": "editor::Format",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "space a": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space t": "terminal_panel::ToggleFocus", // abre terminal
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "space t": "workspace::ToggleBottomDock", // cierra desde la terminal
+    },
+  },
+]
