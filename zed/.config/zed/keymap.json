@@ -9,6 +9,21 @@
   {
     "context": "Workspace",
     "bindings": {
+      "f5": ["task::Spawn", { "task_name": "Flutter: Iniciar (Dashmon)" }],
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-r": [
+        "task::Spawn",
+        { "task_name": "Flutter: Reinicio en caliente" },
+      ],
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
       // "shift shift": "file_finder::Toggle"
     },
   },
@@ -138,6 +153,22 @@
     "context": "Terminal",
     "bindings": {
       "space t": "workspace::ToggleBottomDock", // cierra desde la terminal
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleRightDock",
+      "escape": "workspace::ToggleRightDock",
+      "a": "project_panel::NewFile", // crear archivo
+      "A": "project_panel::NewDirectory", // crear carpeta
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space r": "task::Spawn", // abre picker de tasks
+      "space R": "task::Rerun", // repite el último task
     },
   },
 ]

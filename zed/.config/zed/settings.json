@@ -26,12 +26,10 @@
     "enabled": false,
   },
   "git": {},
-
   "active_pane_modifiers": {
     "border_size": 0.0,
     "inactive_opacity": 1.0,
   },
-
   "outline_panel": {
     "button": false,
   },
@@ -72,6 +70,6 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato (Blur) [Heavy]",
+    "dark": "Catppuccin Macchiato (Blur)",
   },
 }
