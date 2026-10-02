@@ -2,7 +2,7 @@
 window-decoration = false
 window-padding-x = 12
 window-padding-y = 12
-background-opacity = 0.92
+background-opacity = 1
 background-blur-radius = 99
 
 # Scrollback
@@ -45,7 +45,7 @@ shell-integration-features = no-cursor,sudo,no-title
 font-family = Maple Mono
 # Alternativa si usamos Dank Mono:
 # Tamaño de fuente
-font-size = 14
+font-size = 15
 # Tamaño alternativo para Dank Mono
 # font-size = 19
 

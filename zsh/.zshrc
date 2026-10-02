@@ -1,13 +1,13 @@
 export EDITOR=nvim
 
 # Load plugins
-source ~/dotfiles/zsh/plugins.zsh
+source ~/.plugins.zsh
 
 # Load aliases
-source ~/dotfiles/zsh/aliases.zsh
+source ~/.aliases.zsh
 
 # Load functions
-source ~/dotfiles/zsh/functions.zsh
+source ~/.functions.zsh
 
 # Prompt, starship, zoxide, atuin
 eval "$(starship init zsh)"
@@ -29,3 +29,8 @@ fi
 # Alias para usar tmux con la configuración correcta
 alias tmux="tmux -f $TMUX_CONF"
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/cristog/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions
