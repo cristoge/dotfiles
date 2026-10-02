@@ -34,27 +34,38 @@
     "button": false,
   },
   "project_panel": {
+    "folder_indicator": "icon",
     "sticky_scroll": false,
     "indent_size": 20.0,
     "git_status": true,
-    "folder_icons": true,
     "file_icons": true,
     "default_width": 213.0,
     "dock": "right",
   },
   "terminal": {
     "font_size": 15.0,
-    "font_family": "CaskaydiaCove Nerd Font",
+    "font_family": "GeistMono Nerd Font",
   },
   "agent_servers": {
-    "opencode": {
-      "type": "registry",
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "auto",
+        "effort": "medium",
+        "model": "opus"
+      },
+      "favorite_config_option_values": {
+        "model": [
+          "opus"
+        ]
+      },
+      "type": "registry"
     },
   },
   "cursor_blink": true,
-  "ui_font_size": 16.0,
+  "ui_font_size": 15.0,
+  "ui_font_family":"Geist Mono",
   "buffer_line_height": "comfortable",
-  "buffer_font_family": "Maple Mono",
+  "buffer_font_family": "Geist Mono",
   "buffer_font_weight": 400.0,
   "icon_theme": {
     "mode": "dark",

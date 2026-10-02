@@ -59,7 +59,7 @@ font-feature = cv35,cv03,cv05,cv10,cv61
 # Estilo de cursor
 cursor-style = block
 # Shaders
-custom-shader-animation = always
+custom-shader-animation = true
 custom-shader = ./shaders/cursor_personal.glsl
 # background = #141415
 # Guardar estado de ventana al cerrar

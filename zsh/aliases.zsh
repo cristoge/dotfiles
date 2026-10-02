@@ -4,4 +4,5 @@ alias op="opencode"
 alias tmuxvenv='tmux new-window "source venv/bin/activate && exec zsh"'
 alias frun="fastapi dev main.py"
 alias act="source .venv/bin/activate"
-
+alias pyvenv="python3 -m venv .venv"
+alias sshagent= "eval $(ssh-agent)"

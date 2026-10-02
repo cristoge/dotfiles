@@ -171,4 +171,10 @@
       "space R": "task::Rerun", // repite el último task
     },
   },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space shift-t": "workspace::NewCenterTerminal"
+    }
+  }
 ]
