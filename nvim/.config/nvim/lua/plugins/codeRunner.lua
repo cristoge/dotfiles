@@ -28,7 +28,7 @@ return {
           "javac $fileName &&",
           "java $fileNameWithoutExt",
         },
-        python = "python3 -u",
+        python = "uv run --project $dir python -u $file",
         cs = {
           "dotnet run",
         },

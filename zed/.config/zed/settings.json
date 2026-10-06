@@ -69,7 +69,7 @@
   "buffer_font_weight": 400.0,
   "icon_theme": {
     "mode": "system",
-    "light": "Catppuccin Moch",
+    "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha",
   },
   "session": {
