@@ -13,7 +13,7 @@ source ~/.functions.zsh
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
-
+eval "$(mise activate zsh)"
 # Autocompletado nativo
 autoload -U compinit
 compinit
