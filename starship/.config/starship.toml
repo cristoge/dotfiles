@@ -331,26 +331,26 @@ format = '(with [$symbol$version ]($style))'
 
 
 # rose pine colors
-# [palettes.neon]
-# dark_purple = "#232136"  # Rose Pine Base
-# neon_pink = "#eb6f92"    # Rose Pine Love
-# icy_cyan = "#9ccfd8"     # Rose Pine Foam
-# pale_pink = "#ea9a97"    # Rose Pine Rose
-# punchy_pink = "#eb6f92"  # Rose Pine Love (repetido por su intensidad)
-# blue_purple = "#c4a7e7"  # Rose Pine Iris
-# blue_slight_purple = "#3e8fb0"  # Rose Pine Pine
-# blue_bright_purple = "#c4a7e7"  # Rose Pine Iris (usado para un tono brillante)
-# pale_bluepurple = "#9ccfd8"  # Rose Pine Foam (tono suave)
-# med_bpink = "#ea9a97"    # Rose Pine Rose
-# intense_bpink = "#eb6f92" # Rose Pine Love (intensidad)
-# intense_rpink = "#eb6f92" # Rose Pine Love
-# intense_mauve = "#3e8fb0" # Rose Pine Muted
-# dimmed_mauve = "#908caa"  # Rose Pine Subtle
-# grey_rpink = "#2a283e"    # Rose Pine Highlight Low
-# mauve = "#3e8fb0"        # Rose Pine Muted
+[palettes.neon]
+dark_purple = "#232136"  # Rose Pine Base
+neon_pink = "#eb6f92"    # Rose Pine Love
+icy_cyan = "#9ccfd8"     # Rose Pine Foam
+pale_pink = "#ea9a97"    # Rose Pine Rose
+punchy_pink = "#eb6f92"  # Rose Pine Love (repetido por su intensidad)
+blue_purple = "#c4a7e7"  # Rose Pine Iris
+blue_slight_purple = "#3e8fb0"  # Rose Pine Pine
+blue_bright_purple = "#c4a7e7"  # Rose Pine Iris (usado para un tono brillante)
+pale_bluepurple = "#9ccfd8"  # Rose Pine Foam (tono suave)
+med_bpink = "#ea9a97"    # Rose Pine Rose
+intense_bpink = "#eb6f92" # Rose Pine Love (intensidad)
+intense_rpink = "#eb6f92" # Rose Pine Love
+intense_mauve = "#3e8fb0" # Rose Pine Muted
+dimmed_mauve = "#908caa"  # Rose Pine Subtle
+grey_rpink = "#2a283e"    # Rose Pine Highlight Low
+mauve = "#3e8fb0"        # Rose Pine Muted
 #
 # aura dark colors
-[palettes.neon]
+# [palettes.neon]
 # dark_purple = "#15141b"      # Background (Black)
 # neon_pink = "#a277ff"        # Primary Purple
 # icy_cyan = "#82e2ff"         # Blue
@@ -368,19 +368,19 @@ format = '(with [$symbol$version ]($style))'
 # grey_rpink = "#29263c"       # Dark purple-ish
 # mauve = "#a277ff"            # Purple (again)
 #vague colors
-dark_purple = "#252530"          # Background (antes dark_purple)
-neon_pink = "#d8647e"            # Primary Purple (antes neon_pink)
-icy_cyan = "#8ba9c1"             # Blue (antes icy_cyan)
-pale_pink = "#f3be7c"            # Pink (antes pale_pink)
-punchy_pink = "#6e94b2"          # Red (antes punchy_pink)
-blue_purple = "#bb9dbd"          # Green (antes blue_purple)
-blue_slight_purple = "#aeaed1"   # Orange (antes blue_slight_purple)
-blue_bright_purple = "#cdcdcd"   # White bright (antes blue_bright_purple)
-pale_bluepurple = "#606079"      # Selection Purple (no alpha)
-med_bpink = "#e08398"            # Selection Purple (with alpha)
-intense_bpink = "#f3be7c"        # Orange (used again)
-intense_rpink = "#f5cb96"        # Purple
-intense_mauve = "#8ba9c1"        # Green (used again)
-dimmed_mauve = "#c9b1ca"         # Gray (comments)
-grey_rpink = "#bebeda"           # Dark purple-ish
-mauve = "#f3be7c"                # Purple (again)
+# dark_purple = "#252530"          # Background (antes dark_purple)
+# neon_pink = "#d8647e"            # Primary Purple (antes neon_pink)
+# icy_cyan = "#8ba9c1"             # Blue (antes icy_cyan)
+# pale_pink = "#f3be7c"            # Pink (antes pale_pink)
+# punchy_pink = "#6e94b2"          # Red (antes punchy_pink)
+# blue_purple = "#bb9dbd"          # Green (antes blue_purple)
+# blue_slight_purple = "#aeaed1"   # Orange (antes blue_slight_purple)
+# blue_bright_purple = "#cdcdcd"   # White bright (antes blue_bright_purple)
+# pale_bluepurple = "#606079"      # Selection Purple (no alpha)
+# med_bpink = "#e08398"            # Selection Purple (with alpha)
+# intense_bpink = "#f3be7c"        # Orange (used again)
+# intense_rpink = "#f5cb96"        # Purple
+# intense_mauve = "#8ba9c1"        # Green (used again)
+# dimmed_mauve = "#c9b1ca"         # Gray (comments)
+# grey_rpink = "#bebeda"           # Dark purple-ish
+# mauve = "#f3be7c"                # Purple (again)

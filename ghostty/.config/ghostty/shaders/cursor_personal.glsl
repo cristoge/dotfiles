@@ -73,17 +73,18 @@ vec3 gradientColor(float factor) {
     // Colores de Rosé Pine poner aqui los que quieras
     vec3 colors[3] = vec3[3](
         //rose pine colors
-        // vec3(0.49, 0.82, 0.76), // PINE (#31748f)
-        // vec3(0.65, 0.63, 0.94), // IRIS (#c4a7e7)
-        // vec3(0.94, 0.49, 0.60)  // LOVE (#eb6f92)
+vec3(0.192, 0.455, 0.561), // PINE (#31748f)
+vec3(0.769, 0.655, 0.906), // IRIS (#c4a7e7)
+vec3(0.922, 0.435, 0.573)  // LOVE (#eb6f92)
         // aura colors
         // vec3(0.635, 0.466, 1.000), // PURPLE (#a277ff)
         // vec3(0.471, 0.580, 0.671), // GREEN (#61ffca)
         // vec3(0.510, 0.886, 1.000)  // BLUE  (#82e2ff)
         //vague colors
-        vec3(0.471, 0.580, 0.671), // (#7894AB)
-        vec3(0.549, 0.627, 0.867), // (#8CA0DD)
-        vec3(0.824, 0.639, 0.455)  // (#D2A374)
+                //vague colors
+        // vec3(0.706, 0.831, 0.812), // builtin (verde agua) #b4d4cf
+        // vec3(0.733, 0.616, 0.741), // parameter (malva) #bb9dbd
+        // vec3(0.953, 0.745, 0.486)  // warning (amarillo) #f3be7c
     );
     int numColors = 3;
     float segment = 1.0 / float(numColors);

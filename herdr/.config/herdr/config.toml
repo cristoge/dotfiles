@@ -22,12 +22,16 @@ onboarding = false
 # Accepts: hex (#rrggbb), named colors, rgb(r,g,b), or panel_bg = "reset"
 [theme.custom]
 panel_bg = "transparent"
-accent = "#6e94b2"
-blue = "#6e94b2"
-red = "#d8647e"
-yellow = "#f3be7c"
-green = "#99b782"
-
+# accent = "#6e94b2"
+# blue = "#6e94b2"
+# red = "#d8647e"
+# yellow = "#f3be7c"
+# green = "#99b782"
+accent = "#c4a7e7"   # iris
+blue = "#9ccfd8"     # foam
+red = "#eb6f92"      # love
+yellow = "#f6c177"   # gold
+green = "#31748f"    # pine
 [terminal]
 # Executable used for new interactive panes.
 # Empty means $SHELL, then /bin/sh.

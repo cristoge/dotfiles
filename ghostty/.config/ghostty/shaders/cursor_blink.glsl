@@ -66,9 +66,10 @@ float ease(float x) {
     return pow(1.0 - x, 3.0);
 }
 
-
-const vec4 TRAIL_COLOR        = vec4(0.49, 0.82, 0.76, 1.0); // PINE (azul verdoso) #31748f
-const vec4 TRAIL_COLOR_ACCENT = vec4(0.65, 0.63, 0.94, 1.0); // IRIS (morado) #c4a7e7
+// const vec4 TRAIL_COLOR        = vec4(0.431, 0.580, 0.698, 1.0); // keyword (azul acero) #6e94b2
+// const vec4 TRAIL_COLOR_ACCENT = vec4(0.733, 0.616, 0.741, 1.0); // parameter (malva) #bb9dbd
+const vec4 TRAIL_COLOR        = vec4(0.612, 0.812, 0.847, 1.0); // FOAM (#9ccfd8)
+const vec4 TRAIL_COLOR_ACCENT = vec4(0.769, 0.655, 0.906, 1.0); // IRIS (#c4a7e7)
 const float DURATION = 0.1; //IN SECONDS
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
