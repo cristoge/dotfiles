@@ -3,7 +3,6 @@ set -e
 sudo dnf update -y
 echo "Instalando paquetes base..."
 sudo dnf install -y \
-  tmux \
   git \
   zoxide \
   fzf \
@@ -13,9 +12,7 @@ sudo dnf install -y \
   stow \
   wl-clipboard \
   pipx \
-  eza \
-  atuin
-
+  eza
 sudo dnf install -y neovim
 
 sudo dnf copr enable dejan/lazygit -y
