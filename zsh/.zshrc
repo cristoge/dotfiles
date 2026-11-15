@@ -1,5 +1,8 @@
 export EDITOR=nvim
 
+# eza: use Ghostty's Poimandres palette
+export EZA_COLORS="di=1;32:ex=32:ln=36:fi=0:or=31"
+
 # Load plugins
 source ~/.plugins.zsh
 
