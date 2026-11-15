@@ -4,7 +4,8 @@ command_timeout = 500
 scan_timeout = 100
 
 
-palette = 'neon'
+# palette = 'neon'
+palette = 'poimandres'
 
 format = """\
 $singularity\
@@ -331,23 +332,50 @@ format = '(with [$symbol$version ]($style))'
 
 
 # rose pine colors
-[palettes.neon]
-dark_purple = "#232136"  # Rose Pine Base
-neon_pink = "#eb6f92"    # Rose Pine Love
-icy_cyan = "#9ccfd8"     # Rose Pine Foam
-pale_pink = "#ea9a97"    # Rose Pine Rose
-punchy_pink = "#eb6f92"  # Rose Pine Love (repetido por su intensidad)
-blue_purple = "#c4a7e7"  # Rose Pine Iris
-blue_slight_purple = "#3e8fb0"  # Rose Pine Pine
-blue_bright_purple = "#c4a7e7"  # Rose Pine Iris (usado para un tono brillante)
-pale_bluepurple = "#9ccfd8"  # Rose Pine Foam (tono suave)
-med_bpink = "#ea9a97"    # Rose Pine Rose
-intense_bpink = "#eb6f92" # Rose Pine Love (intensidad)
-intense_rpink = "#eb6f92" # Rose Pine Love
-intense_mauve = "#3e8fb0" # Rose Pine Muted
-dimmed_mauve = "#908caa"  # Rose Pine Subtle
-grey_rpink = "#2a283e"    # Rose Pine Highlight Low
-mauve = "#3e8fb0"        # Rose Pine Muted
+# [palettes.neon]
+# dark_purple = "#232136"  # Rose Pine Base
+# neon_pink = "#eb6f92"    # Rose Pine Love
+# icy_cyan = "#9ccfd8"     # Rose Pine Foam
+# pale_pink = "#ea9a97"    # Rose Pine Rose
+# punchy_pink = "#eb6f92"  # Rose Pine Love (repetido por su intensidad)
+# blue_purple = "#c4a7e7"  # Rose Pine Iris
+# blue_slight_purple = "#3e8fb0"  # Rose Pine Pine
+# blue_bright_purple = "#c4a7e7"  # Rose Pine Iris (usado para un tono brillante)
+# pale_bluepurple = "#9ccfd8"  # Rose Pine Foam (tono suave)
+# med_bpink = "#ea9a97"    # Rose Pine Rose
+# intense_bpink = "#eb6f92" # Rose Pine Love (intensidad)
+# intense_rpink = "#eb6f92" # Rose Pine Love
+# intense_mauve = "#3e8fb0" # Rose Pine Muted
+# dimmed_mauve = "#908caa"  # Rose Pine Subtle
+# grey_rpink = "#2a283e"    # Rose Pine Highlight Low
+# mauve = "#3e8fb0"        # Rose Pine Muted
+
+# poimandres colors (same palette as Ghostty; keep existing format aliases)
+[palettes.poimandres]
+dark_purple = "#1a1e28"
+neon_pink = "#d0679d"
+icy_cyan = "#89ddff"
+pale_pink = "#fcc5e9"
+punchy_pink = "#d0679d"
+blue_purple = "#add7ff"
+blue_slight_purple = "#89ddff"
+blue_bright_purple = "#add7ff"
+pale_bluepurple = "#a6accd"
+med_bpink = "#fcc5e9"
+intense_bpink = "#5de4c7"
+intense_rpink = "#d0679d"
+intense_mauve = "#5de4c7"
+dimmed_mauve = "#a6accd"
+grey_rpink = "#1a1e28"
+mauve = "#add7ff"
+green = "#5de4c7"
+red = "#d0679d"
+yellow = "#fffac2"
+blue = "#89ddff"
+purple = "#fcc5e9"
+cyan = "#add7ff"
+white = "#ffffff"
+black = "#1a1e28"
 #
 # aura dark colors
 # [palettes.neon]

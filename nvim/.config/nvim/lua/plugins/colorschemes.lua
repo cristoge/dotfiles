@@ -113,29 +113,32 @@ return {
       })
     end,
   },
-  { "tahayvr/sunset-drive.nvim", lazy = false, priority = 1000 },
+
   {
     "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
+
     config = function()
       local p = require("poimandres.palette")
+
       require("poimandres").setup({
+        disable_background = true,
+        disable_float_background = true,
+
         highlight_groups = {
           LspReferenceText = { bg = p.background1 },
           LspReferenceRead = { bg = p.background1 },
           LspReferenceWrite = { bg = p.background1 },
-          NormalFloat = { bg = p.background1, fg = p.text },
-          FloatBorder = { bg = p.background1, fg = p.text },
+          NormalFloat = { bg = "NONE", fg = p.text },
+          FloatBorder = { bg = "NONE", fg = p.text },
         },
       })
-    end,
 
-    -- Set the colorscheme
-    init = function()
       vim.cmd("colorscheme poimandres")
     end,
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",

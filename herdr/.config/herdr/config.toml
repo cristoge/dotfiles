@@ -27,11 +27,19 @@ panel_bg = "transparent"
 # red = "#d8647e"
 # yellow = "#f3be7c"
 # green = "#99b782"
-accent = "#c4a7e7"   # iris
-blue = "#9ccfd8"     # foam
-red = "#eb6f92"      # love
-yellow = "#f6c177"   # gold
-green = "#31748f"    # pine
+# Rose Pine
+# accent = "#c4a7e7"   # iris
+# blue = "#9ccfd8"     # foam
+# red = "#eb6f92"      # love
+# yellow = "#f6c177"   # gold
+# green = "#31748f"    # pine
+
+# Poimandres (same palette as Ghostty)
+accent = "#5de4c7"   # mint
+blue = "#89ddff"     # bright cyan
+red = "#d0679d"      # pink
+yellow = "#fffac2"   # pale yellow
+green = "#5de4c7"    # mint
 [terminal]
 # Executable used for new interactive panes.
 # Empty means $SHELL, then /bin/sh.

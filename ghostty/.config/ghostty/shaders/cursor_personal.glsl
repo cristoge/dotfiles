@@ -70,12 +70,16 @@ vec4 saturate(vec4 color, float factor) {
 
 
 vec3 gradientColor(float factor) {
-    // Colores de Rosé Pine poner aqui los que quieras
+    // Colores del degradado del cursor
     vec3 colors[3] = vec3[3](
-        //rose pine colors
-vec3(0.192, 0.455, 0.561), // PINE (#31748f)
-vec3(0.769, 0.655, 0.906), // IRIS (#c4a7e7)
-vec3(0.922, 0.435, 0.573)  // LOVE (#eb6f92)
+        // rose pine colors
+        // vec3(0.192, 0.455, 0.561), // PINE (#31748f)
+        // vec3(0.769, 0.655, 0.906), // IRIS (#c4a7e7)
+        // vec3(0.922, 0.435, 0.573)  // LOVE (#eb6f92)
+        // poimandres colors
+        vec3(93.0, 228.0, 199.0) / 255.0,  // MINT (#5de4c7)
+        vec3(137.0, 221.0, 255.0) / 255.0, // CYAN (#89ddff)
+        vec3(208.0, 103.0, 157.0) / 255.0  // PINK (#d0679d)
         // aura colors
         // vec3(0.635, 0.466, 1.000), // PURPLE (#a277ff)
         // vec3(0.471, 0.580, 0.671), // GREEN (#61ffca)

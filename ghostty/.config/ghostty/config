@@ -25,7 +25,8 @@ keybind = shift+enter=text:\n
 # UI & Theme
 # Tema personalizado
 #theme = vague
-theme = rose pine moon
+#theme = rose pine moon
+theme = poimandres
 # Opacidad de splits no activos
 unfocused-split-opacity = 0.7
 # Color de splits no activos
