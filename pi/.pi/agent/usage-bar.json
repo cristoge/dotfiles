@@ -1,0 +1,10 @@
+{
+  "bar_glyph": "thin",
+  "bar_width": 16,
+  "color_ok": "#A6E3A1",
+  "color_warn": "#F9E2AF",
+  "color_hot": "#F38BA8",
+  "display": {
+    "mode": "active"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "compaction": {
+    "enabled": true
+  },
+  "editorPaddingX": 0,
+  "fullscreenCopyOnSelect": true,
+  "fullscreenExitOutput": "transcript",
+  "fullscreenScrollbar": "auto",
+  "images": {
+    "autoResize": true,
+    "blockImages": false
+  },
+  "npmCommand": [
+    "mise",
+    "exec",
+    "node@24",
+    "--",
+    "npm"
+  ],
+  "packages": [
+    "npm:gentle-engram",
+    "npm:pi-goal-x",
+    "npm:@gomeen/pi-usage-bar",
+    "npm:pi-vim",
+    "npm:@tintinweb/pi-tasks"
+  ],
+  "terminal": {
+    "showImages": true,
+    "imageWidthCells": 60
+  },
+  "tuiMode": "fullscreen",
+  "lastChangelogVersion": "1.5.2",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:@tintinweb/pi-tasks\",\"scope\":\"user\"}": "0.9.1"
+  }
+}

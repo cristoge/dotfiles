@@ -11,9 +11,11 @@ sudo dnf install -y \
   luarocks \
   stow \
   wl-clipboard \
-  pipx \
   eza
 sudo dnf install -y neovim
+
+sudo dnf copr enable jdxcode/mise -y
+sudo dnf install -y mise
 
 sudo dnf copr enable dejan/lazygit -y
 sudo dnf install -y lazygit
