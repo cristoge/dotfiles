@@ -22,7 +22,9 @@
     "npm:pi-goal-x",
     "npm:@gomeen/pi-usage-bar",
     "npm:pi-vim",
-    "npm:@tintinweb/pi-tasks"
+    "npm:@tintinweb/pi-tasks",
+    "npm:pi-subagents",
+    "npm:@vndv/pi-codegraph@0.1.10"
   ],
   "terminal": {
     "showImages": true,
@@ -31,6 +33,7 @@
   "tuiMode": "fullscreen",
   "lastChangelogVersion": "1.5.2",
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:@tintinweb/pi-tasks\",\"scope\":\"user\"}": "0.9.1"
+    "{\"source\":\"npm:@tintinweb/pi-tasks\",\"scope\":\"user\"}": "0.9.1",
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.1"
   }
 }
