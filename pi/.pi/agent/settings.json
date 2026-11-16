@@ -1,39 +1,19 @@
 {
-  "compaction": {
-    "enabled": true
-  },
-  "editorPaddingX": 0,
-  "fullscreenCopyOnSelect": true,
-  "fullscreenExitOutput": "transcript",
-  "fullscreenScrollbar": "auto",
-  "images": {
-    "autoResize": true,
-    "blockImages": false
-  },
-  "npmCommand": [
-    "mise",
-    "exec",
-    "node@24",
-    "--",
-    "npm"
-  ],
-  "packages": [
-    "npm:gentle-engram",
-    "npm:pi-goal-x",
-    "npm:@gomeen/pi-usage-bar",
-    "npm:pi-vim",
-    "npm:@tintinweb/pi-tasks",
-    "npm:pi-subagents",
-    "npm:@vndv/pi-codegraph@0.1.10"
-  ],
-  "terminal": {
-    "showImages": true,
-    "imageWidthCells": 60
-  },
-  "tuiMode": "fullscreen",
   "lastChangelogVersion": "1.5.2",
-  "extensionChangelogVersions": {
-    "{\"source\":\"npm:@tintinweb/pi-tasks\",\"scope\":\"user\"}": "0.9.1",
-    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.1"
-  }
+  "tuiMode": "fullscreen",
+  "packages": [
+    {
+      "source": "npm:gentle-pi",
+      "extensions": [
+        "-extensions/startup-banner.ts",
+        "+extensions/gentle-agent-status.ts",
+        "+extensions/gentle-tps.ts",
+        "+extensions/gentle-shell.ts"
+      ],
+      "themes": []
+    }
+  ],
+  "extensions": [
+    "-builtin:codemode"
+  ]
 }

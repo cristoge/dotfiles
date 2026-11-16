@@ -110,24 +110,16 @@ mise install
 
 ## Pi
 
-The optional `pi` package configures [Pi](https://pi.dev/) with a fullscreen interface, Vim bindings, persistent memory through gentle-engram, goal and task management, and a usage bar. Its extension list lives in `pi/.pi/agent/settings.json`.
+The optional `pi` Stow package configures [Pi](https://pi.dev/) with [Gentle AI](https://www.npmjs.com/package/gentle-pi) through `npm:gentle-pi`. Its settings live in `pi/.pi/agent/settings.json`.
 
-Pi is not installed by the package commands or Fedora script above. Install it separately using the [official instructions](https://pi.dev/), then link its configuration:
+The configuration uses fullscreen mode, disables the package's startup banner, and includes its agent-status, tokens-per-second, and Gentle Shell extensions. Package themes are disabled with `themes: []`, leaving Pi's default `system` theme in use. Pi's built-in codemode extension is disabled.
+
+Pi is not installed by the package commands or Fedora script above. Install it separately using the [official instructions](https://pi.dev/) and make sure `npm` is on your `PATH`, then link its configuration:
 
 ```bash
 stow pi
 ```
 
-Back up any existing `~/.pi/agent/` configuration before linking. This package includes settings, MCP servers, and usage-bar preferences, not credentials or session history.
+Back up any existing `~/.pi/agent/` configuration before linking. Stow refuses conflicting files; do not overwrite your active configuration without reviewing the differences. The package contains portable settings only, not credentials, session history, installed package files, or a machine-specific device ID.
 
-### Requirements
-
-- **mise and Node.js 24**: Pi's package commands use `mise exec node@24 -- npm`. Complete the mise setup above first.
-- **`npx` on `PATH`**: the Context7 MCP server launches through `npx`. Activating mise makes the configured Node.js tools available to Pi.
-- **GitHub CLI**: the GitHub MCP server obtains its token dynamically with `gh auth token`. Install `gh` (`brew install gh` on macOS or `sudo dnf install gh` on Fedora), then authenticate:
-
-  ```bash
-  gh auth login
-  ```
-
-The MCP configuration is in `pi/.pi/agent/mcp.json` and includes Context7 and GitHub. No GitHub token is stored in that file. Configure your AI provider separately inside Pi with `/login`.
+Pi installs the declared npm package when needed at startup. The package version is not pinned, matching the current setup. Configure your AI provider separately inside Pi with `/login`.
