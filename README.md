@@ -1,6 +1,6 @@
 # Dotfiles
 
-My terminal-centric development environment: Ghostty, zsh, Neovim, and a few AI tools, all themed with Rosé Pine. I use it every day on a MacBook. My other computer runs Fedora, my Linux distro of choice, so the repository also includes an install script for it.
+My terminal-centric development environment: Ghostty, zsh, Neovim, Zed, and a few AI tools. Ghostty, herdr, Starship, and Neovim use Vague; Zed uses Catppuccin Espresso in dark mode. I use this setup every day on a MacBook. My other computer runs Fedora, my Linux distro of choice, so the repository also includes an install script for it.
 
 Each tool's configuration directory is a [GNU Stow](https://www.gnu.org/software/stow/) package, so a single `stow <name>` from `~/dotfiles` links that tool's config into `$HOME`.
 
@@ -19,11 +19,11 @@ Each tool's configuration directory is a [GNU Stow](https://www.gnu.org/software
 | Terminal | Ghostty with transparency, blur, and custom cursor shaders |
 | Shell and prompt | zsh with autosuggestions and syntax highlighting, Starship, and zoxide |
 | Runtime versions and CLI tools | mise (Node.js, Python, Go, Terraform, pnpm, uv, AWS CLI) |
-| Multiplexer | herdr |
-| Editor | Neovim with LazyVim, plus Zed as a secondary editor |
-| AI tools | Claude Code (via claudecode.nvim), Pi, and minuet-ai inline completion with DeepSeek |
+| Multiplexer | herdr with its sidebar hidden at startup |
+| Editor | Neovim with LazyVim, plus Zed with Vim mode |
+| AI tools | Pi, Codex, and Claude Code |
 | System info | fastfetch with a minimal module list |
-| Fonts and color | Maple Mono and Rosé Pine |
+| Fonts and color | Maple Mono, Geist Mono in Zed, Vague, and Catppuccin Espresso |
 
 ## Ghostty cursor shaders
 
@@ -31,7 +31,7 @@ Ghostty draws an animated trail when the cursor moves. The shaders live in `ghos
 
 | Shader | Effect |
 |--------|--------|
-| `cursor_personal.glsl` | **Active.** Trail in the Rosé Pine colors pine, iris, and love (0.2 s) |
+| `cursor_personal.glsl` | **Active.** Trail in Vague teal, mauve, and yellow (0.2 s) |
 | `cursor_blink.glsl` | Short trail in Rosé Pine foam and iris (0.1 s) |
 | `cursor_starwars.glsl` | Cyan and blue trail (0.3 s) |
 | `cursor_white.glsl` | Subtle, semi-transparent trail (0.1 s) |
@@ -108,6 +108,21 @@ mise install
   git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
   ```
 
+## Editors
+
+Neovim uses LazyVim with the Vague colorscheme.
+
+Zed uses its default base keymap with Vim mode, relative line numbers, format on save, and autosave on focus change. Its tab bar and scrollbar are hidden, and the project panel is docked on the right. The interface, editor, and terminal use Geist Mono.
+
+The custom bindings in `zed/.config/zed/keymap.json` are:
+
+| Context | Shortcut | Action |
+|---------|----------|--------|
+| Vim normal mode | `Ctrl-H/J/K/L` | Focus the pane to the left, below, above, or right |
+| Vim visual mode | `Shift-S` | Add surrounding characters to the selection |
+
+Zed's settings configure DeepSeek edit predictions and the Codex ACP agent. The global `zed/.config/zed/tasks.json` contains an example shell task to adapt to your workflow.
+
 ## Pi
 
 The optional `pi` Stow package configures [Pi](https://pi.dev/) with [Gentle AI](https://www.npmjs.com/package/gentle-pi) through `npm:gentle-pi`. Its settings live in `pi/.pi/agent/settings.json`.
@@ -123,3 +138,17 @@ stow pi
 Back up any existing `~/.pi/agent/` configuration before linking. Stow refuses conflicting files; do not overwrite your active configuration without reviewing the differences. The package contains portable settings only, not credentials, session history, installed package files, or a machine-specific device ID.
 
 Pi installs the declared npm package when needed at startup. The package version is not pinned, matching the current setup. Configure your AI provider separately inside Pi with `/login`.
+
+The optional [minimal status-bar patch](pi/.pi/agent/patches/README.md) saves the thin green/orange/red gauges and hidden monetary segment while retaining the system theme. It targets Gentle Pi 4.8.0 and must be checked and reapplied manually after an update; Stow does not apply it.
+
+## Local files ignored by Git
+
+The [`.gitignore`](.gitignore) excludes local runtime files from the Stow packages:
+
+| Tool | Ignored files |
+|------|---------------|
+| herdr | Plugin lock, logs, current session, and session snapshots |
+| Zed | The local `prompts/` database directory |
+| Pi | Authentication, model-store state, sessions, installed binaries and packages, and generated Gentle AI and ACP state |
+
+Pi's `settings.json` and optional patches remain versioned. Ignore rules apply to untracked files; files already tracked by Git must be removed from its index separately to stop versioning them.

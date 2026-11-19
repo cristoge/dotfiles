@@ -7,30 +7,58 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "agent": {
+    "auto_compact": {
+      "threshold": "90%"
+    },
+    "play_sound_when_agent_done": "when_hidden",
+    "threads_sidebar": {
+      "default_width": 300.0
+    },
+    "dock": "left",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "ssh_connections": [
+    {
+      "host": "ejemplo1",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/ec2-user"],
+        },
+      ],
+    },
+  ],
+
+  // Interfaz
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false,
   },
-  "relative_line_numbers": "enabled",
   "tab_bar": {
     "show": false,
   },
   "scrollbar": {
     "show": "never",
   },
-  "edit_predictions": {
-    "provider": "copilot",
-  },
   "use_system_window_tabs": false,
   "preview_tabs": {
     "enabled": false,
   },
-  "git": {},
   "active_pane_modifiers": {
     "border_size": 0.0,
     "inactive_opacity": 1.0,
   },
   "outline_panel": {
+    "dock": "right",
     "button": false,
   },
   "project_panel": {
@@ -42,45 +70,83 @@
     "default_width": 213.0,
     "dock": "right",
   },
-  "terminal": {
-    "font_size": 15.0,
-    "font_family": "GeistMono Nerd Font",
-  },
-  "agent_servers": {
-    "claude-acp": {
-      "default_config_options": {
-        "mode": "auto",
-        "effort": "medium",
-        "model": "opus"
-      },
-      "favorite_config_option_values": {
-        "model": [
-          "opus"
-        ]
-      },
-      "type": "registry"
-    },
-  },
+
+  // Editor
+  "relative_line_numbers": "enabled",
   "cursor_blink": true,
-  "ui_font_size": 15.0,
-  "ui_font_family":"GeistMono Nerd Font",
   "buffer_line_height": "comfortable",
   "buffer_font_family": "GeistMono Nerd Font",
+  "buffer_font_fallbacks": ["Apple Color Emoji"],
   "buffer_font_weight": 400.0,
+  "buffer_font_size": 15.0,
+  "format_on_save": "on",
+  "autosave": "on_focus_change",
+  "inlay_hints": {
+    "enabled": true,
+  },
+
+  // Vim
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "on_yank",
+  },
+  "base_keymap": "Zed",
+
+  // Fuentes de la interfaz
+  "ui_font_size": 15.0,
+  "ui_font_family": "GeistMono Nerd Font",
+  "ui_font_fallbacks": ["Apple Color Emoji"],
+
+  // Terminal
+  "terminal": {
+    "font_size": 13.0,
+    "font_family": "GeistMono Nerd Font",
+    "font_fallbacks": ["Apple Color Emoji"],
+  },
+
+  // Temas
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha",
   },
-  "session": {
-    "trust_all_worktrees": true,
-  },
-  "vim_mode": true,
-  "base_keymap": "Zed",
-  "buffer_font_size": 15.0,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato (Blur)",
+    "dark": "Catppuccin Espresso (Blur) [Heavy]",
+  },
+
+  // IA
+  "edit_predictions": {
+    "mode": "eager",
+    "provider": "open_ai_compatible_api",
+    "open_ai_compatible_api": {
+      "api_url": "https://api.deepseek.com/beta/completions",
+      "model": "deepseek-v4-flash",
+      "prompt_format": "deepseek_coder",
+      "max_output_tokens": 64,
+      "prediction_debounce": 0,
+    },
+
+    "disabled_globs": ["**/.env*", "**/*.pem", "**/secrets/**"],
+  },
+  "agent_servers": {
+    "codex-acp": {
+      "favorite_config_option_values": {
+        "model": [
+          "gpt-6.2-sol"
+        ]
+      },
+      "default_config_options": {
+        "model": "gpt-6.2-sol",
+        "fast-mode": false
+      },
+      "type": "registry"
+    },
+  },
+
+  // Seguridad
+  "session": {
+    "trust_all_worktrees": false,
   },
 }

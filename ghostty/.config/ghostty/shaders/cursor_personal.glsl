@@ -77,18 +77,18 @@ vec3 gradientColor(float factor) {
         // vec3(0.769, 0.655, 0.906), // IRIS (#c4a7e7)
         // vec3(0.922, 0.435, 0.573)  // LOVE (#eb6f92)
         // poimandres colors
-        vec3(93.0, 228.0, 199.0) / 255.0,  // MINT (#5de4c7)
-        vec3(137.0, 221.0, 255.0) / 255.0, // CYAN (#89ddff)
-        vec3(208.0, 103.0, 157.0) / 255.0  // PINK (#d0679d)
+        // vec3(93.0, 228.0, 199.0) / 255.0,  // MINT (#5de4c7)
+        // vec3(137.0, 221.0, 255.0) / 255.0, // CYAN (#89ddff)
+        // vec3(208.0, 103.0, 157.0) / 255.0  // PINK (#d0679d)
         // aura colors
         // vec3(0.635, 0.466, 1.000), // PURPLE (#a277ff)
         // vec3(0.471, 0.580, 0.671), // GREEN (#61ffca)
         // vec3(0.510, 0.886, 1.000)  // BLUE  (#82e2ff)
         //vague colors
                 //vague colors
-        // vec3(0.706, 0.831, 0.812), // builtin (verde agua) #b4d4cf
-        // vec3(0.733, 0.616, 0.741), // parameter (malva) #bb9dbd
-        // vec3(0.953, 0.745, 0.486)  // warning (amarillo) #f3be7c
+        vec3(0.706, 0.831, 0.812), // builtin (verde agua) #b4d4cf
+        vec3(0.733, 0.616, 0.741), // parameter (malva) #bb9dbd
+        vec3(0.953, 0.745, 0.486)  // warning (amarillo) #f3be7c
     );
     int numColors = 3;
     float segment = 1.0 / float(numColors);

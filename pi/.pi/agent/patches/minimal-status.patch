@@ -1,0 +1,152 @@
+--- a/lib/shell-gauge.ts
++++ b/lib/shell-gauge.ts
+@@ -14,27 +14,29 @@
+ }
+ 
+ export const GAUGE_CELLS = 8;
+-const GAUGE_FILLED = "▰";
+-const GAUGE_EMPTY = "▱";
++const GAUGE_FILLED = "━";
++const GAUGE_EMPTY = "─";
++// Local gauge-only palette: leave Pi's dynamic system theme untouched.
++const GAUGE_OK = "\x1b[38;2;111;191;131m";
++const GAUGE_WARNING = "\x1b[38;2;230;160;82m";
++const GAUGE_ERROR = "\x1b[38;2;223;107;104m";
+ const GAUGE_EMPTY_ROLE = "border";
+ const WARNING_THRESHOLD = 80;
+ const ERROR_THRESHOLD = 95;
+ 
+-// Gauge-specific theme roles (issue #2222). Every field is optional and falls
+-// back to the shared role the gauge painted with before gauge roles existed,
+-// so themes without a gauge block render byte-identically to today.
++// Theme-specific gauge overrides still take precedence over local defaults.
+ export interface GaugePaint {
+-	/** Filled cells below the warning threshold; falls back to `accent`. */
++	/** Filled cells below the warning threshold; falls back to local green. */
+ 	ok?: string;
+-	/** Filled cells from 80%; falls back to `warning`. */
++	/** Filled cells from 80%; falls back to local orange. */
+ 	warning?: string;
+-	/** Filled cells from 95%; falls back to `error`. */
++	/** Filled cells from 95%; falls back to local red. */
+ 	error?: string;
+ 	/** Empty cells; falls back to `border`. */
+ 	empty?: string;
+-	/** Filled-cell glyph; falls back to `▰`. */
++	/** Filled-cell glyph; falls back to `━`. */
+ 	filled?: string;
+-	/** Empty-cell glyph; falls back to `▱`. */
++	/** Empty-cell glyph; falls back to `─`. */
+ 	emptyGlyph?: string;
+ }
+ 
+@@ -70,7 +72,7 @@
+ 	const isAnsi = (role: string | undefined): role is string => typeof role === "string" && role.startsWith("\x1b[");
+ 	const paintFg = (role: string | undefined, fallback: string, text: string): string => (isAnsi(role) ? `${role}${text}\x1b[39m` : theme.fg(role ?? fallback, text));
+ 	const tone = gaugeTone(percent);
+-	const filledRole = tone === GAUGE_TONE.ACCENT ? paint?.ok : tone === GAUGE_TONE.WARNING ? paint?.warning : tone === GAUGE_TONE.ERROR ? paint?.error : undefined;
++	const filledRole = tone === GAUGE_TONE.ACCENT ? paint?.ok ?? GAUGE_OK : tone === GAUGE_TONE.WARNING ? paint?.warning ?? GAUGE_WARNING : tone === GAUGE_TONE.ERROR ? paint?.error ?? GAUGE_ERROR : undefined;
+ 	return paintFg(filledRole, tone, filled) + paintFg(paint?.empty, GAUGE_EMPTY_ROLE, gauge.slice(filled.length));
+ }
+ 
+--- a/lib/shell-bar.ts
++++ b/lib/shell-bar.ts
+@@ -49,7 +49,7 @@
+ }
+ 
+ // The live header row above the fullscreen rail: session identity plus the
+-// live counters. Only the structured jobs count may join context/cost when
++// live counters. Only the structured jobs count may join context/usage when
+ // Status is absent; opaque extension statuses and working state stay excluded.
+ export interface ShellHeaderModel {
+ 	jobs?: number;
+@@ -63,7 +63,7 @@
+ 	costTotal: number;
+ 	subscription: boolean;
+ 	// The active provider's subscription usage, shown as its own segment after
+-	// cost. Unlike the sidebar's old per-model usage table, this is one
++	// context. Unlike the sidebar's old per-model usage table, this is one
+ 	// compact line — the same windows the compact bar already meters.
+ 	usage: ProviderUsage | undefined;
+ }
+@@ -176,22 +176,19 @@
+ 	return `${theme.fg(ROLE.LABEL, "ctx")} ${gauge}${theme.fg(ROLE.VALUE, percentText)}`;
+ }
+ 
+-function costSegment(costTotal: number, subscription: boolean, theme: ShellBarTheme): string {
+-	return theme.fg(ROLE.VALUE, formatCost(costTotal, subscription));
+-}
++// Local chrome preference: omit monetary cost, keeping context and usage.
+ 
+ function buildSegments(model: ShellBarModel, theme: ShellBarTheme, presentation?: Presentation, paint?: GaugePaint): string[] {
+ 	const location = locationSegment(model, theme);
+ 	const modelSegment = executionSegment(model.modelId, model.effort, theme);
+ 	const context = contextSegment(model.contextPercent, theme, paint);
+-	const cost = costSegment(model.costTotal, model.subscription, theme);
+ 	const usage = model.usage ? renderUsageBar(model.usage, theme, model.modelId, paint) : undefined;
+ 	const statuses = model.statuses.map((status) => theme.fg(ROLE.STATUS, sanitizeStatus(status)));
+ 	return [
+ 		...(presentation?.density === "minimal" ? [] : [theme.fg(ROLE.BRAND, SHELL_BAR_BRAND)]),
+ 		location,
+ 		...(presentation?.visibility.modelDetails === false ? [] : [modelSegment]),
+-		...(presentation?.visibility.usageCost === false ? [] : [context, cost, ...(usage ? [usage] : [])]),
++		...(presentation?.visibility.usageCost === false ? [] : [context, ...(usage ? [usage] : [])]),
+ 		...(model.jobs?.length ? [theme.fg(ROLE.STATUS, shellJobsCount(model.jobs.length))] : []),
+ 		...statuses,
+ 	];
+@@ -358,7 +355,7 @@
+ }
+ /**
+  * The status bar: branch, dirty count and a non-default permission mode on
+- * the left; model · effort, context, cost and usage on the right. A long
++ * the left; model · effort, context and usage on the right. A long
+  * branch shortens before the model and counters give way; usage and its
+  * click target degrade with the available space.
+  */
+@@ -383,7 +380,7 @@
+ 	const profileName = model.profile ? sanitizeStatus(model.profile) : "";
+ 	const profile = profileName ? ` ${theme.fg(ROLE.LABEL, "·")} ${theme.fg(ROLE.LABEL, profileName)}` : "";
+ 	const exec = presentation?.visibility.modelDetails === false ? "" : executionSegment(model.modelId, model.effort, theme);
+-	const counters = showCounters ? [contextSegment(model.contextPercent, theme, paint, !minimal), costSegment(model.costTotal, model.subscription, theme)] : [];
++	const counters = showCounters ? [contextSegment(model.contextPercent, theme, paint, !minimal)] : [];
+ 	const windows = model.usage ? (selectUsageLimit(model.usage, model.modelId)?.windows ?? []) : [];
+ 	const stages: Array<UsageStage | undefined> = !showCounters ? [undefined] : minimal ? ["text", "primary", undefined] : ["full", "text", "primary", undefined];
+ 	const attempts = [...stages.flatMap((stage) => [{ stage, withExec: true, withTier: true, withProfile: true }, ...(profile ? [{ stage, withExec: true, withTier: true, withProfile: false }] : [])]),
+@@ -416,8 +413,8 @@
+ 		const usageSpan = usage ? { start: target - 1 - visibleWidth(usage), end: target - 1 } : undefined;
+ 		return { rows: [paintChromeRow(theme, row)], headerRow: 0, ...(usageSpan ? { usageSpan } : {}) };
+ 	}
+-	// Still too wide: the branch gives way before context and cost, which give
+-	// way last, context after cost. Keep the badges when only they fit.
++	// Still too wide: the branch gives way before context, which gives way
++	// last. Keep the badges when only they fit.
+ 	const tailWidth = tail ? visibleWidth(tail) + (branch ? visibleWidth(divider) : 0) : 0;
+ 	for (const right of [join(counters), counters[0] ?? "", ""]) {
+ 		const leftRoom = room - visibleWidth(right) - (right ? RIGHT_PADDING : 0);
+@@ -540,7 +537,7 @@
+ 
+ /**
+  * A chrome bar: the split status bar row (branch, permission mode, model,
+- * context, cost, usage). In comfortable density it is centered between two
++ * context, usage). In comfortable density it is centered between two
+  * margin rows on the chrome surface; compact and minimal draw the bar row
+  * alone, with minimal omitting gauges and shortcut hints. The top, below-input
+  * and split bars share this design; a transparent surface leaves it unpainted.
+@@ -566,7 +563,7 @@
+ 	const minimal = presentation?.density === "minimal";
+ 	const ctxCost = joinSegments([
+ 		...(jobs ? [jobs] : []),
+-		...(presentation?.visibility.usageCost === false ? [] : [contextSegment(model.contextPercent, theme, paint, !minimal), costSegment(model.costTotal, model.subscription, theme)]),
++		...(presentation?.visibility.usageCost === false ? [] : [contextSegment(model.contextPercent, theme, paint, !minimal)]),
+ 	], theme);
+ 	const windows = model.usage ? (selectUsageLimit(model.usage, model.modelId)?.windows ?? []) : [];
+ 	const belowInput = presentation?.headerPlacement === "below-input";
+@@ -581,7 +578,7 @@
+ 	// One flat, ordered cascade — never a per-stage nested search — so the
+ 	// left group fully degrades (profile → effort → location → restored effort) before usage
+ 	// ever gives anything up, and usage fully degrades (gauges → secondary
+-	// windows → the whole segment) before ctx/cost is touched: every window
++	// windows → the whole segment) before context is touched: every window
+ 	// with its gauge, then text-only, then the first window only, then gone.
+ 	// Unlike the compact bar's usage meter (hidden with no data), this is a
+ 	// standing, clickable affordance: it reads "usage" even with no data, plus

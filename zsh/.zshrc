@@ -1,8 +1,7 @@
 export EDITOR=nvim
 
-# eza: use Ghostty's Poimandres palette
-export EZA_COLORS="di=1;32:ex=32:ln=36:fi=0:or=31"
-
+# eza: use contrasting colors from Ghostty's Vague palette
+export EZA_COLORS="di=1;35:ex=32:ln=33:fi=0:or=1;31"
 # Load plugins
 source ~/.plugins.zsh
 
@@ -27,3 +26,6 @@ autoload -Uz compinit
 # End of Docker CLI completions
 #
 [ -f ~/.secrets ] && source ~/.secrets
+
+# Pi
+export PATH="/Users/cristog/.pi/agent/bin:$PATH"

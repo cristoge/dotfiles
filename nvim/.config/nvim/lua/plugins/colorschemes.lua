@@ -134,8 +134,6 @@ return {
           FloatBorder = { bg = "NONE", fg = p.text },
         },
       })
-
-      vim.cmd("colorscheme poimandres")
     end,
   },
 
@@ -146,7 +144,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "vague",
     },
   },
 }

@@ -22,11 +22,6 @@ onboarding = false
 # Accepts: hex (#rrggbb), named colors, rgb(r,g,b), or panel_bg = "reset"
 [theme.custom]
 panel_bg = "transparent"
-# accent = "#6e94b2"
-# blue = "#6e94b2"
-# red = "#d8647e"
-# yellow = "#f3be7c"
-# green = "#99b782"
 # Rose Pine
 # accent = "#c4a7e7"   # iris
 # blue = "#9ccfd8"     # foam
@@ -34,12 +29,12 @@ panel_bg = "transparent"
 # yellow = "#f6c177"   # gold
 # green = "#31748f"    # pine
 
-# Poimandres (same palette as Ghostty)
-accent = "#5de4c7"   # mint
-blue = "#89ddff"     # bright cyan
-red = "#d0679d"      # pink
-yellow = "#fffac2"   # pale yellow
-green = "#5de4c7"    # mint
+# Vague (same palette as Ghostty)
+accent = "#6e94b2"
+blue = "#6e94b2"
+red = "#d8647e"
+yellow = "#f3be7c"
+green = "#99b782"
 [terminal]
 # Executable used for new interactive panes.
 # Empty means $SHELL, then /bin/sh.
@@ -147,6 +142,10 @@ green = "#5de4c7"    # mint
 # directory = "~/.herdr/worktrees"
 
 [ui]
+# Hide the sidebar completely when collapsed and start with it hidden.
+sidebar_collapsed_mode = "hidden"
+sidebar_start_collapsed = true
+
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
 # sidebar_width = 26
 

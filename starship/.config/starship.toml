@@ -5,7 +5,7 @@ scan_timeout = 100
 
 
 # palette = 'neon'
-palette = 'poimandres'
+palette = 'vague'
 
 format = """\
 $singularity\
@@ -111,7 +111,7 @@ repo_root_format = """\
 style = "bold fg:mauve"
 
 format = """\
-[🧚‍♀️](fg:icy_cyan) \
+[🧚](fg:icy_cyan) \
 [$path]($style)[$read_only]($read_only_style) \
 """
 
@@ -350,32 +350,32 @@ format = '(with [$symbol$version ]($style))'
 # grey_rpink = "#2a283e"    # Rose Pine Highlight Low
 # mauve = "#3e8fb0"        # Rose Pine Muted
 
-# poimandres colors (same palette as Ghostty; keep existing format aliases)
-[palettes.poimandres]
-dark_purple = "#1a1e28"
-neon_pink = "#d0679d"
-icy_cyan = "#89ddff"
-pale_pink = "#fcc5e9"
-punchy_pink = "#d0679d"
-blue_purple = "#add7ff"
-blue_slight_purple = "#89ddff"
-blue_bright_purple = "#add7ff"
-pale_bluepurple = "#a6accd"
-med_bpink = "#fcc5e9"
-intense_bpink = "#5de4c7"
-intense_rpink = "#d0679d"
-intense_mauve = "#5de4c7"
-dimmed_mauve = "#a6accd"
-grey_rpink = "#1a1e28"
-mauve = "#add7ff"
-green = "#5de4c7"
-red = "#d0679d"
-yellow = "#fffac2"
-blue = "#89ddff"
-purple = "#fcc5e9"
-cyan = "#add7ff"
-white = "#ffffff"
-black = "#1a1e28"
+# # poimandres colors (same palette as Ghostty; keep existing format aliases)
+# [palettes.poimandres]
+# dark_purple = "#1a1e28"
+# neon_pink = "#d0679d"
+# icy_cyan = "#89ddff"
+# pale_pink = "#fcc5e9"
+# punchy_pink = "#d0679d"
+# blue_purple = "#add7ff"
+# blue_slight_purple = "#89ddff"
+# blue_bright_purple = "#add7ff"
+# pale_bluepurple = "#a6accd"
+# med_bpink = "#fcc5e9"
+# intense_bpink = "#5de4c7"
+# intense_rpink = "#d0679d"
+# intense_mauve = "#5de4c7"
+# dimmed_mauve = "#a6accd"
+# grey_rpink = "#1a1e28"
+# mauve = "#add7ff"
+# green = "#5de4c7"
+# red = "#d0679d"
+# yellow = "#fffac2"
+# blue = "#89ddff"
+# purple = "#fcc5e9"
+# cyan = "#add7ff"
+# white = "#ffffff"
+# black = "#1a1e28"
 #
 # aura dark colors
 # [palettes.neon]
@@ -396,19 +396,20 @@ black = "#1a1e28"
 # grey_rpink = "#29263c"       # Dark purple-ish
 # mauve = "#a277ff"            # Purple (again)
 #vague colors
-# dark_purple = "#252530"          # Background (antes dark_purple)
-# neon_pink = "#d8647e"            # Primary Purple (antes neon_pink)
-# icy_cyan = "#8ba9c1"             # Blue (antes icy_cyan)
-# pale_pink = "#f3be7c"            # Pink (antes pale_pink)
-# punchy_pink = "#6e94b2"          # Red (antes punchy_pink)
-# blue_purple = "#bb9dbd"          # Green (antes blue_purple)
-# blue_slight_purple = "#aeaed1"   # Orange (antes blue_slight_purple)
-# blue_bright_purple = "#cdcdcd"   # White bright (antes blue_bright_purple)
-# pale_bluepurple = "#606079"      # Selection Purple (no alpha)
-# med_bpink = "#e08398"            # Selection Purple (with alpha)
-# intense_bpink = "#f3be7c"        # Orange (used again)
-# intense_rpink = "#f5cb96"        # Purple
-# intense_mauve = "#8ba9c1"        # Green (used again)
-# dimmed_mauve = "#c9b1ca"         # Gray (comments)
-# grey_rpink = "#bebeda"           # Dark purple-ish
-# mauve = "#f3be7c"                # Purple (again)
+[palettes.vague]
+dark_purple = "#252530"          # Background (antes dark_purple)
+neon_pink = "#d8647e"            # Primary Purple (antes neon_pink)
+icy_cyan = "#8ba9c1"             # Blue (antes icy_cyan)
+pale_pink = "#f3be7c"            # Pink (antes pale_pink)
+punchy_pink = "#6e94b2"          # Red (antes punchy_pink)
+blue_purple = "#bb9dbd"          # Green (antes blue_purple)
+blue_slight_purple = "#aeaed1"   # Orange (antes blue_slight_purple)
+blue_bright_purple = "#cdcdcd"   # White bright (antes blue_bright_purple)
+pale_bluepurple = "#606079"      # Selection Purple (no alpha)
+med_bpink = "#e08398"            # Selection Purple (with alpha)
+intense_bpink = "#f3be7c"        # Orange (used again)
+intense_rpink = "#f5cb96"        # Purple
+intense_mauve = "#8ba9c1"        # Green (used again)
+dimmed_mauve = "#c9b1ca"         # Gray (comments)
+grey_rpink = "#bebeda"           # Dark purple-ish
+mauve = "#f3be7c"                # Purple (again)
